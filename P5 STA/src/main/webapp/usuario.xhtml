@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http:/java.sun.com/jsf/facelets">
+<ui:composition template="/WEB-INF/templates/plantilla.xhtml">
+	<ui:define name="TituloPagina">Tienda</ui:define>
+	<ui:define name="Contenido">
+		<h1>Productos</h1>
+
+<h:dataTable value="#{shopBean.lee()}" var="p" border="2">
+			<h:column>
+				<f:facet name="header">Nombre</f:facet>
+	#{p.nombre}
+	</h:column>
+			<h:column>
+				<f:facet name="header">Descripcion</f:facet>
+	#{p.descripcion}
+	</h:column>
+			<h:column>
+				<f:facet name="header">Precio</f:facet>
+	#{p.precio}
+	</h:column>
+			<h:column>
+				<f:facet name="header">Identificador</f:facet>
+	#{p.ID}
+	</h:column>
+		</h:dataTable>
+	</ui:define>
+</ui:composition>
+</html>
